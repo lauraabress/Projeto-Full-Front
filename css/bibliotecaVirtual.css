@@ -1,0 +1,19 @@
+/*CABEÇALHO  #DB9B23*/
+
+#logo{
+    width: 100px
+}
+
+.navbar navbar-expand-lg bg-body-tertiary{
+    justify-content: center;
+    display: flex;
+    text-align: center;
+}
+
+.nav-item{
+    margin-right: 20px;
+}
+
+.nav-item:hover{
+    color: #DB9B23;
+}
