@@ -72,7 +72,7 @@ form.d-flex input.form-control:focus {
 /* MAIN */
 
 .card {
-  height: 470px;
+  height: 510px;
   display: flex;
   flex-direction: column;
 }
