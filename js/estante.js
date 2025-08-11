@@ -40,7 +40,7 @@ function atualizarEstante() {
       <div class="card-body">
         <h5 class="card-title">${livro.titulo}</h5>
         <p class="card-text">${livro.autor}</p>
-        <select class="form-select form-select-sm fst-italic mb-2" style="max-width: 150px;">
+        <select class="form-select form-select-sm fst-italic mb-2" style="max-width: 160px;">
           <option value="quero ler" ${livro.status === "quero ler" ? "selected" : ""}>Quero Ler</option>
           <option value="lendo" ${livro.status === "lendo" ? "selected" : ""}>Lendo</option>
           <option value="lido" ${livro.status === "lido" ? "selected" : ""}>Lido</option>
