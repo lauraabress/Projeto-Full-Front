@@ -13,7 +13,53 @@
 </head>
 
 <body>
-    <h2>teste</h2>
+    <header>
+        <div id="superior" class="d-flex align-items-center justify-content-between">
+            <div id="logo" class="text-left">
+                <img src="../img/Lumnia - logo.png" alt="Logo Lumnia" class="img-fluid" />
+            </div>
+
+            <nav id="barra-pesquisa" class="navbar flex-grow-1 mx-3">
+                <div class="container-fluid p-0">
+                    <form class="d-flex" role="search" onsubmit="return false;">
+                        <div class="input-group">
+                            <input id="input-pesquisa" type="search" class="form-control"
+                                placeholder="Pesquise por títulos aqui" aria-label="Search" />
+                            <span class="input-group-text" id="basic-addon2">
+                                <i class="bi bi-search"></i>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+
+            <div id="icon-area">
+                <i id="estante" class="bi bi-bookmark-heart-fill fs-4"></i>
+                <i id="perfil" class="bi bi-person-fill fs-3"></i>
+            </div>
+        </div>
+
+
+
+    </header>
+    <hr>
+
+    <main>
+        <div class="info-pag my-3 mx-3 p-3">
+            <h2><strong>Estante</strong></h2>
+            <p id="contador-livros">0 livros na estante</p>
+        </div>
+
+        <div class="container-fluid">
+            <div id="lista-livros" class="row">
+                <!-- Cards serão inseridos aqui -->
+            </div>
+        </div>
+    </main>
+
+
+    <script src="../js/estante.js"></script>
+
 </body>
 
 </html>

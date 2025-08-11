@@ -2,3 +2,94 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+/*CABEÇALHO*/
+
+#superior {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+#barra-pesquisa {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px; /* ou ajuste conforme quiser */
+}
+
+input::placeholder {
+  font-style: italic;
+}
+
+#logo{
+  width: 100px;
+  cursor: pointer;
+}
+
+form.d-flex input.form-control {
+  min-width: 300px; /* aumenta o campo */
+  max-width: 400px; /* opcional, para não ficar gigante */
+}
+
+form.d-flex input.form-control:focus {
+  border-color: #DB9B23;       /* muda a borda */
+  box-shadow: 0 0 0 0.25rem rgba(219, 155, 35, 0.5); /* contorno amarelo suave */
+  outline: none;               /* remove o contorno padrão do navegador */
+}
+
+.collapse.navbar-collapse{
+    justify-content: center;
+    display: flex;
+    text-align: center;
+}
+
+.nav-item{
+    margin-right: 20px;
+}
+
+.nav-link:hover{
+    color: #DB9B23;
+}
+
+#icon-area {
+  margin-right: 10px;
+  display: flex;
+  align-items: center; /* alinha verticalmente ao centro */
+  gap: 1rem; /* espaço entre os ícones */
+}
+
+#icon-area i {
+  cursor: pointer;
+  line-height: 1; /* remove espaçamento extra vertical */
+  color: #616161;
+}
+
+#icon-area i:hover{
+  color: #DB9B23;
+}
+
+
+/* MAIN */
+
+.card {
+  height: 470px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#container-card{
+  margin: 10px;
+}
+

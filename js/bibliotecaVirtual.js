@@ -14,122 +14,97 @@ document.getElementById("logo").addEventListener("click", function() {
 });
 
 // ------------------------------------------------------------------------
+// Função para adicionar livro na estante (localStorage)
+function adicionarEstante(botao, event) {
+  event.preventDefault();
 
-// FILTRO DE CATEGORIAS
-function mostrarTodos(){
-    document.querySelectorAll('.card').forEach(function(card) {
-        const col = card.parentElement;
-        col.style.display = 'block';
-    });
+  const card = botao.closest('.card');
+  const titulo = card.querySelector('.card-title').textContent;
+  const autor = card.querySelector('.card-text').textContent;
+  const imagem = card.querySelector('img').src;
+
+  // Pega a lista atual da estante do localStorage ou cria uma nova
+  let estante = JSON.parse(localStorage.getItem('estanteLivros')) || [];
+
+  // Verifica se o livro já está na estante
+  const existe = estante.some(livro => livro.titulo === titulo && livro.autor === autor);
+  if (existe) {
+    alert(`O livro "${titulo}" já está na estante!`);
+    return;
+  }
+
+  // Adiciona o livro e salva no localStorage
+  estante.push({ titulo, autor, imagem, status: 'quero ler' });
+  localStorage.setItem('estanteLivros', JSON.stringify(estante));
+
+  alert(`Livro "${titulo}" adicionado à estante!`);
 }
 
-function mostrarRomance(){
-    document.querySelectorAll('.card').forEach(function(card) {
-        const col = card.parentElement;
-        if(card.classList.contains('romance')){
-            col.style.display = 'block';
-        } else {
-            col.style.display = 'none';
-        }
-    });
+// Navegação entre páginas (estante, perfil, inicial)
+document.getElementById("estante").addEventListener("click", () => {
+  window.location.href = "estante.html";
+});
+
+document.getElementById("perfil").addEventListener("click", () => {
+  window.location.href = "perfil.html";
+});
+
+document.getElementById("logo").addEventListener("click", () => {
+  window.location.href = "bibliotecaVirtual.html";
+});
+
+// Filtros de categorias
+function mostrarTodos() {
+  document.querySelectorAll('.card').forEach(card => card.parentElement.style.display = 'block');
 }
 
-function mostrarAventura(){
-    document.querySelectorAll('.card').forEach(function(card) {
-        const col = card.parentElement;
-        if(card.classList.contains('aventura')){
-            col.style.display = 'block';
-        } else {
-            col.style.display = 'none';
-        }
-    });
+function mostrarRomance() {
+  filtrarPorClasse('romance');
 }
 
-function mostrarDrama(){
-    document.querySelectorAll('.card').forEach(function(card) {
-        const col = card.parentElement;
-        if(card.classList.contains('drama')){
-            col.style.display = 'block';
-        } else {
-            col.style.display = 'none';
-        }
-    });
-}  
-
-function mostrarTerror(){
-    document.querySelectorAll('.card').forEach(function(card) {
-        const col = card.parentElement;
-        if(card.classList.contains('terror')){
-            col.style.display = 'block';
-        } else {
-            col.style.display = 'none';
-        }
-    });
+function mostrarAventura() {
+  filtrarPorClasse('aventura');
 }
 
-function mostrarSuspense(){
-    document.querySelectorAll('.card').forEach(function(card) {
-        const col = card.parentElement;
-        if(card.classList.contains('suspense')){
-            col.style.display = 'block';
-        } else {
-            col.style.display = 'none';
-        }
-    });
+function mostrarDrama() {
+  filtrarPorClasse('drama');
 }
 
-function mostrarFantasia(){
-    document.querySelectorAll('.card').forEach(function(card) {
-        const col = card.parentElement;
-        if(card.classList.contains('fantasia')){
-            col.style.display = 'block';
-        } else {
-            col.style.display = 'none';
-        }
-    });
+function mostrarTerror() {
+  filtrarPorClasse('terror');
 }
 
-function mostrarFiccao(){
-    document.querySelectorAll('.card').forEach(function(card) {
-        const col = card.parentElement;
-        if(card.classList.contains('ficcao')){
-            col.style.display = 'block';
-        } else {
-            col.style.display = 'none';
-        }
-    });
+function mostrarSuspense() {
+  filtrarPorClasse('suspense');
 }
 
-function mostrarSobrenatural(){
-    document.querySelectorAll('.card').forEach(function(card) {
-        const col = card.parentElement;
-        if(card.classList.contains('sobrenatural')){  // Corrigi aqui o 'obrenatural' para 'sobrenatural'
-            col.style.display = 'block';
-        } else {
-            col.style.display = 'none';
-        }
-    });
+function mostrarFantasia() {
+  filtrarPorClasse('fantasia');
 }
 
-// ------------------------------------------------------------------------
+function mostrarFiccao() {
+  filtrarPorClasse('ficcao');
+}
 
-// BARRA DE PESQUISA
+function mostrarSobrenatural() {
+  filtrarPorClasse('sobrenatural');
+}
 
+function filtrarPorClasse(classe) {
+  document.querySelectorAll('.card').forEach(card => {
+    card.parentElement.style.display = card.classList.contains(classe) ? 'block' : 'none';
+  });
+}
+
+// Barra de pesquisa
 const inputPesquisa = document.getElementById('input-pesquisa');
-
-inputPesquisa.addEventListener('input', function() {
+inputPesquisa.addEventListener('input', () => {
   const filtro = inputPesquisa.value.toLowerCase();
 
   document.querySelectorAll('.card').forEach(card => {
     const titulo = card.querySelector('.card-title').textContent.toLowerCase();
     const autor = card.querySelector('.card-text').textContent.toLowerCase();
 
-    const col = card.parentElement;
-
-    if (titulo.includes(filtro) || autor.includes(filtro)) {
-      col.style.display = 'block';
-    } else {
-      col.style.display = 'none';
-    }
+    card.parentElement.style.display = (titulo.includes(filtro) || autor.includes(filtro)) ? 'block' : 'none';
   });
 });
