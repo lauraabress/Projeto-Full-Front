@@ -133,3 +133,20 @@ form.d-flex input.form-control:focus {
   width: 105px;
   text-align: center;
 }
+
+/*FOOTER*/
+
+footer{
+  background-color: #DB9B23;
+  text-align: center;
+  padding: 20px;
+}
+
+footer p{
+  margin: 2px;
+}
+
+#redes i{
+  margin-right: 5px;
+  color: black;
+}

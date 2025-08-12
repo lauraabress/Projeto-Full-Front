@@ -112,7 +112,13 @@ function atualizarEstante() {
     // Botão Ler Agora
     cardDiv.querySelector(".ler-agora-btn").addEventListener("click", () => {
       const tituloUrl = encodeURIComponent(livro.titulo);
-      window.location.href = `leitura.html?livro=${tituloUrl}`;
+      if (livro.titulo === "1984") {
+        window.location.href = `leitura1984.html?livro=${tituloUrl}`;
+        return;
+      } else {
+        alert(`A página de leitura para "${livro.titulo}" ainda não está disponível.`);
+        return;
+      }
     });
 
     // Select de status
