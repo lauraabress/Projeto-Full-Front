@@ -1,3 +1,37 @@
+// MODO ESCURO
+// Evento para alternar modo escuro ao clicar no botão
+document.getElementById("modo-escuro").addEventListener("click", function () {
+  // Alterna classes no body
+  document.body.classList.toggle("bg-dark");
+  document.body.classList.toggle("text-white"); 
+
+  // Alterna modo escuro nos cards
+  const cards = document.querySelectorAll(".card");
+  cards.forEach(card => {
+    card.classList.toggle("dark-mode");
+  });
+
+  // Salva preferência no localStorage (true ou false)
+  const modoAtivo = document.body.classList.contains("bg-dark");
+  localStorage.setItem("modoEscuro", modoAtivo);
+});
+
+// Ao carregar a página, verifica se o modo escuro estava ativo e aplica
+window.addEventListener("load", () => {
+  const modoAtivo = localStorage.getItem("modoEscuro");
+
+  if (modoAtivo === "true") {
+    document.body.classList.add("bg-dark", "text-white");
+
+    const cards = document.querySelectorAll(".card");
+    cards.forEach(card => {
+      card.classList.add("dark-mode");
+    });
+  }
+});
+
+
+
 // VAI PARA A PÁGINA DA ESTANTE
 document.getElementById("estante").addEventListener("click", function() {
   window.location.href = "estante.html";
@@ -13,6 +47,11 @@ document.getElementById("logo").addEventListener("click", function() {
   window.location.href = "bibliotecaVirtual.html";
 });
 
+// VAI PARA A PÁGINA INICIAL AO CLICAR EM VOLTAR
+document.getElementById("btn-voltar").addEventListener("click", function() {
+  window.location.href = "bibliotecaVirtual.html";
+});
+
 // ------------------------------------------------------------------------
 
 // Atualiza a estante na tela
@@ -20,6 +59,8 @@ function atualizarEstante() {
   const estante = JSON.parse(localStorage.getItem("estanteLivros")) || [];
   const listaLivros = document.getElementById("lista-livros");
   listaLivros.innerHTML = "";
+
+  const modoAtivo = document.body.classList.contains("bg-dark");
 
   if (estante.length === 0) {
     listaLivros.innerHTML = "<p>Nenhum livro na estante.</p>";
@@ -32,8 +73,16 @@ function atualizarEstante() {
     colDiv.className = "col-12 col-sm-6 col-md-4 col-lg-2";
 
     const cardDiv = document.createElement("div");
-    cardDiv.className = "card bg-white mb-4";
+    cardDiv.className = "card mb-4"; // removi bg-white para não conflitar com dark-mode
     cardDiv.style.width = "12rem";
+
+    // Se o modo escuro estiver ativo, adiciona a classe 'dark-mode'
+    if (modoAtivo) {
+      cardDiv.classList.add("dark-mode");
+    } else {
+      // Caso queira garantir o fundo branco no modo claro, pode adicionar:
+      cardDiv.classList.add("bg-white");
+    }
 
     cardDiv.innerHTML = `
       <img src="${livro.imagem}" class="card-img-top" alt="${livro.titulo}">

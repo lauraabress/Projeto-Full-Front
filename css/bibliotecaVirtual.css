@@ -4,6 +4,48 @@
 
 /*CABEÇALHO*/
 
+/* Barra de pesquisa no modo escuro */
+body.bg-dark #input-pesquisa, body.bg-dark .input-group-text {
+  background-color: #333;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+/* Placeholder da barra de pesquisa no modo escuro */
+body.bg-dark #input-pesquisa::placeholder {
+  color: #bbb;
+}
+
+.navbar-dark {
+  background-color: #222 !important;  /* fundo escuro */
+  color: white !important;             /* texto branco */
+}
+
+.navbar-dark .nav-link {
+  color: white !important;             /* links em branco */
+}
+
+.navbar-dark .nav-link:hover {
+  color: #ddd !important;              /* cor de hover um pouco mais clara */
+}
+
+.card {
+  background-color: white;
+  color: black;
+}
+
+.card.dark-mode {
+  background-color: #222 !important;
+  color: #eee !important;
+  border-color: #555 !important;
+}
+
+.nav-link.active {
+  background-color: #DB9B23;
+  border-radius: 15px;
+  color: #ffffff !important;
+}
+
 #superior {
   display: flex;
   align-items: center;
