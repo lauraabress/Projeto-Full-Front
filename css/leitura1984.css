@@ -1,7 +1,11 @@
-table{
-     text-align: center;
-     width: 100%;
-     height: 100%;
+* {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+table {
+  text-align: center;
+  width: 100%;
+  height: 100%;
 }
 
 #superior {
@@ -14,7 +18,7 @@ input::placeholder {
   font-style: italic;
 }
 
-#logo{
+#logo {
   width: 100px;
   cursor: pointer;
 }
@@ -25,9 +29,9 @@ form.d-flex input.form-control {
 }
 
 form.d-flex input.form-control:focus {
-  border-color: #DB9B23;       /* muda a borda */
+  border-color: #db9b23; /* muda a borda */
   box-shadow: 0 0 0 0.25rem rgba(219, 155, 35, 0.5); /* contorno amarelo suave */
-  outline: none;               /* remove o contorno padrão do navegador */
+  outline: none; /* remove o contorno padrão do navegador */
 }
 
 #icon-area {
@@ -43,10 +47,10 @@ form.d-flex input.form-control:focus {
   color: #616161;
 }
 
-#icon-area i:hover{
-  color: #DB9B23;
+#icon-area i:hover {
+  color: #db9b23;
 }
 
-hr{
-    margin-top: 0;
+hr {
+  margin-top: 0;
 }
