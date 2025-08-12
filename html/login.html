@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biblioteca Lumnia</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/bibliotecaVirtual.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="icon" type="image/png" href="../img/Lumnia - logo.png" />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <img src="../img/Lumnia - logo.png" alt="logo-limnia" />
+      <h2>Login</h2>
+      <form id="loginForm">
+        <div class="campo">
+          <label id="la-email" for="email">E-mail: </label>
+          <input
+            id="in-email"
+            type="email"
+            placeholder="exemplo@gmail.com"
+            required
+          />
+        </div>
+        <div class="campo">
+          <label id="la-senha" for="senha">Senha: </label>
+          <input id="in-senha" type="text" placeholder="senha" required />
+        </div>
+      </form>
+      <button
+        id="botao-login"
+        class="btn btn-warning"
+        type="submit"
+        form="loginForm"
+      >
+        Entrar
+      </button>
+      <div id="msg-cadastrar">
+        <p>Não possui conta?</p>
+        <p id="cadastro">Cadastre-se</p>
+      </div>
+    </div>
+
+    <script src="../js/login.js"></script>
+  </body>
+</html>

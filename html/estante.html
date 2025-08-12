@@ -1,77 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Biblioteca Lumnia</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="../css/estante.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
-    <link rel="icon" type="image/png" href="../img/Lumnia - logo.png">
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="../img/Lumnia - logo.png" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <div id="superior" class="d-flex align-items-center justify-content-between">
-            <div id="logo" class="text-left">
-                <img src="../img/Lumnia - logo.png" alt="Logo Lumnia" class="img-fluid" />
-            </div>
-
-            <nav id="barra-pesquisa" class="navbar flex-grow-1 mx-3">
-                <div class="container-fluid p-0">
-                    <form class="d-flex" role="search" onsubmit="return false;">
-                        <div class="input-group">
-                            <input id="input-pesquisa" type="search" class="form-control"
-                                placeholder="Pesquise por títulos aqui" aria-label="Search" />
-                            <span class="input-group-text" id="basic-addon2">
-                                <i class="bi bi-search"></i>
-                            </span>
-                        </div>
-                    </form>
-                </div>
-            </nav>
-
-            <div id="icon-area">
-                <i id="estante" class="bi bi-bookmark-heart-fill fs-4"></i>
-                <i id="perfil" class="bi bi-person-fill fs-3"></i>
-                <i id="modo-escuro" class="bi bi-moon-stars-fill fs-4"></i>
-            </div>
+      <div
+        id="superior"
+        class="d-flex align-items-center justify-content-between"
+      >
+        <div id="logo" class="text-left">
+          <img
+            src="../img/Lumnia - logo.png"
+            alt="Logo Lumnia"
+            class="img-fluid"
+          />
         </div>
 
+        <nav id="barra-pesquisa" class="navbar flex-grow-1 mx-3">
+          <div class="container-fluid p-0">
+            <form class="d-flex" role="search" onsubmit="return false;">
+              <div class="input-group">
+                <input
+                  id="input-pesquisa"
+                  type="search"
+                  class="form-control"
+                  placeholder="Pesquise por títulos aqui"
+                  aria-label="Search"
+                />
+                <span class="input-group-text" id="basic-addon2">
+                  <i class="bi bi-search"></i>
+                </span>
+              </div>
+            </form>
+          </div>
+        </nav>
 
-
+        <div id="icon-area">
+          <i id="estante" class="bi bi-bookmark-heart-fill fs-4"></i>
+          <i id="perfil" class="bi bi-person-fill fs-3"></i>
+          <i id="modo-escuro" class="bi bi-moon-stars-fill fs-4"></i>
+        </div>
+      </div>
     </header>
-    <hr>
+    <hr />
 
     <main>
-        <div class="info-pag my-3 mx-3 p-3">
-            <h2><strong>Estante</strong></h2>
-            <p id="contador-livros">0 livros na estante</p>
-            <button id="btn-voltar" class="btn btn-warning">Voltar</button>
+      <div class="info-pag my-3 mx-3 p-3">
+        <h2><strong>Estante</strong></h2>
+        <p id="contador-livros">0 livros na estante</p>
+        <button id="btn-voltar" class="btn btn-warning">Voltar</button>
+      </div>
 
+      <div class="container-fluid">
+        <div id="lista-livros" class="row">
+          <!-- Cards serão inseridos aqui -->
         </div>
-
-
-        <div class="container-fluid">
-            <div id="lista-livros" class="row">
-                <!-- Cards serão inseridos aqui -->
-            </div>
-        </div>
+      </div>
     </main>
 
     <footer>
-        <p class="text-black">Biblioteca LUMNIA</p>
-        <div id="redes">
-            <i class="bi bi-whatsapp"></i>
-            <i class="bi bi-tiktok"></i>
-            <i class="bi bi-facebook"></i>
-        </div>
+      <p class="text-black">Biblioteca LUMNIA</p>
+      <div id="redes">
+        <i class="bi bi-whatsapp"></i>
+        <i class="bi bi-tiktok"></i>
+        <i class="bi bi-facebook"></i>
+      </div>
     </footer>
 
     <script src="../js/estante.js"></script>
-
-</body>
-
+  </body>
 </html>

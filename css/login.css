@@ -1,0 +1,84 @@
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: center;
+  justify-content: center;
+}
+
+.container-fluid {
+  text-align: center;
+  justify-content: center;
+  max-width: 500px;
+  box-shadow: 0px 0px 20px #db9b2365;
+  margin-top: 5%;
+}
+
+img {
+  width: 300px;
+  height: 220px;
+  object-fit: cover;
+  margin-bottom: 50px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 40px;
+  margin-bottom: 60px;
+}
+
+#loginForm {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+#in-senha,
+#in-email {
+  width: 80%;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+#in-senha {
+  margin-bottom: 50px;
+}
+
+#la-email,
+#la-senha {
+  justify-content: start;
+  text-align: start;
+  width: 80%;
+}
+
+.campo {
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#botao-login {
+  width: 80%;
+  height: 40px;
+  text-align: center;
+  justify-content: center;
+}
+
+#msg-cadastrar {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+#cadastro {
+  font-style: italic;
+  font-weight: bold;
+}
+
+#cadastro:hover {
+  font-style: italic;
+  font-weight: bold;
+  color: #db9b23;
+  cursor: pointer;
+}
