@@ -3,11 +3,11 @@
 document.getElementById("modo-escuro").addEventListener("click", function () {
   // Alterna classes no body
   document.body.classList.toggle("bg-dark");
-  document.body.classList.toggle("text-white"); 
+  document.body.classList.toggle("text-white");
 
   // Alterna modo escuro nos cards
   const cards = document.querySelectorAll(".card");
-  cards.forEach(card => {
+  cards.forEach((card) => {
     card.classList.toggle("dark-mode");
   });
 
@@ -24,31 +24,29 @@ window.addEventListener("load", () => {
     document.body.classList.add("bg-dark", "text-white");
 
     const cards = document.querySelectorAll(".card");
-    cards.forEach(card => {
+    cards.forEach((card) => {
       card.classList.add("dark-mode");
     });
   }
 });
 
-
-
 // VAI PARA A PÁGINA DA ESTANTE
-document.getElementById("estante").addEventListener("click", function() {
+document.getElementById("estante").addEventListener("click", function () {
   window.location.href = "estante.html";
 });
 
 // VAI PARA A PÁGINA DO PERFIL
-document.getElementById("perfil").addEventListener("click", function() {
+document.getElementById("perfil").addEventListener("click", function () {
   window.location.href = "perfil.html";
 });
 
 // VAI PARA A PÁGINA INICIAL AO CLICAR NA LOGO
-document.getElementById("logo").addEventListener("click", function() {
+document.getElementById("logo").addEventListener("click", function () {
   window.location.href = "bibliotecaVirtual.html";
 });
 
 // VAI PARA A PÁGINA INICIAL AO CLICAR EM VOLTAR
-document.getElementById("btn-voltar").addEventListener("click", function() {
+document.getElementById("btn-voltar").addEventListener("click", function () {
   window.location.href = "bibliotecaVirtual.html";
 });
 
@@ -74,7 +72,6 @@ function atualizarEstante() {
 
     const cardDiv = document.createElement("div");
     cardDiv.className = "card mb-4"; // removi bg-white para não conflitar com dark-mode
-    cardDiv.style.width = "12rem";
 
     // Se o modo escuro estiver ativo, adiciona a classe 'dark-mode'
     if (modoAtivo) {
@@ -89,10 +86,16 @@ function atualizarEstante() {
       <div class="card-body">
         <h5 class="card-title">${livro.titulo}</h5>
         <p class="card-text">${livro.autor}</p>
-        <select class="form-select form-select-sm fst-italic mb-2" style="max-width: 160px;">
-          <option value="quero ler" ${livro.status === "quero ler" ? "selected" : ""}>Quero Ler</option>
-          <option value="lendo" ${livro.status === "lendo" ? "selected" : ""}>Lendo</option>
-          <option value="lido" ${livro.status === "lido" ? "selected" : ""}>Lido</option>
+        <select class="form-select form-select-sm fst-italic mb-2" style="max-width: auto;">
+          <option value="quero ler" ${
+            livro.status === "quero ler" ? "selected" : ""
+          }>Quero Ler</option>
+          <option value="lendo" ${
+            livro.status === "lendo" ? "selected" : ""
+          }>Lendo</option>
+          <option value="lido" ${
+            livro.status === "lido" ? "selected" : ""
+          }>Lido</option>
         </select>
         <button class="btn btn-warning btn-sm w-100 ler-agora-btn mb-2">Ler agora</button>
         <button class="btn btn-outline-warning btn-sm w-100">Excluir</button>
@@ -100,14 +103,16 @@ function atualizarEstante() {
     `;
 
     // Botão Excluir
-    cardDiv.querySelector("button.btn-outline-warning").addEventListener("click", () => {
-      if (confirm(`Remover "${livro.titulo}" da estante?`)) {
-        estante.splice(index, 1);
-        localStorage.setItem("estanteLivros", JSON.stringify(estante));
-        atualizarEstante();
-        alert(`Livro "${livro.titulo}" removido da estante.`);
-      }
-    });
+    cardDiv
+      .querySelector("button.btn-outline-warning")
+      .addEventListener("click", () => {
+        if (confirm(`Remover "${livro.titulo}" da estante?`)) {
+          estante.splice(index, 1);
+          localStorage.setItem("estanteLivros", JSON.stringify(estante));
+          atualizarEstante();
+          alert(`Livro "${livro.titulo}" removido da estante.`);
+        }
+      });
 
     // Botão Ler Agora
     cardDiv.querySelector(".ler-agora-btn").addEventListener("click", () => {
@@ -116,7 +121,9 @@ function atualizarEstante() {
         window.location.href = `leitura1984.html?livro=${tituloUrl}`;
         return;
       } else {
-        alert(`A página de leitura para "${livro.titulo}" ainda não está disponível.`);
+        alert(
+          `A página de leitura para "${livro.titulo}" ainda não está disponível.`
+        );
         return;
       }
     });
@@ -148,7 +155,7 @@ function adicionarEstante(livro) {
   const estante = JSON.parse(localStorage.getItem("estanteLivros")) || [];
 
   // Verifica se livro já existe
-  const existe = estante.some(l => l.titulo === livro.titulo);
+  const existe = estante.some((l) => l.titulo === livro.titulo);
   if (existe) {
     alert(`O livro "${livro.titulo}" já está na estante.`);
     return;
@@ -166,11 +173,14 @@ if (inputPesquisa) {
   inputPesquisa.addEventListener("input", () => {
     const filtro = inputPesquisa.value.toLowerCase();
 
-    document.querySelectorAll("#lista-livros .card").forEach(card => {
-      const titulo = card.querySelector(".card-title").textContent.toLowerCase();
+    document.querySelectorAll("#lista-livros .card").forEach((card) => {
+      const titulo = card
+        .querySelector(".card-title")
+        .textContent.toLowerCase();
       const autor = card.querySelector(".card-text").textContent.toLowerCase();
 
-      card.parentElement.style.display = (titulo.includes(filtro) || autor.includes(filtro)) ? "block" : "none";
+      card.parentElement.style.display =
+        titulo.includes(filtro) || autor.includes(filtro) ? "block" : "none";
     });
   });
 }
