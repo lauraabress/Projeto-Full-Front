@@ -62,8 +62,9 @@ function atualizarEstante() {
 
   if (estante.length === 0) {
     listaLivros.innerHTML = "<p>Nenhum livro na estante.</p>";
-    atualizarContagem();
     return;
+  } else {
+    atualizarContagem();
   }
 
   estante.forEach((livro, index) => {
