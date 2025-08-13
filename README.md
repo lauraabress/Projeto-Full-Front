@@ -1,8 +1,8 @@
 # Projeto-Full-Front
 Foram desenvolvidos três aplicações front-end como parte de desafios propostos, com foco em HTML, CSS, JavaScript e utilização de LocalStorage para persistência de dados no navegador. Cada projeto foi elaborado com interface responsiva e usabilidade aprimorada.
 
-| Desafio 1 – Mini Sistema de Pedidos: Lanchonete
-| Objetivo: Criar um sistema simples para registrar pedidos em uma lanchonete, modernizando o atendimento no balcão.
+**| Desafio 1 – Mini Sistema de Pedidos: Lanchonete**
+- Objetivo: Criar um sistema simples para registrar pedidos em uma lanchonete, modernizando o atendimento no balcão.
 
 Funcionalidades:
   - Página de cardápio com mínimo de 18 itens.
@@ -21,8 +21,8 @@ Tecnologias e diferenciais:
   - Feedbacks visuais (“Item adicionado!”, contagem de itens no carrinho).
   - Uso de ilustrações e emojis para melhor experiência visual.
 
-| Desafio 2 – Biblioteca Virtual: Leitura Livre
-| Objetivo: Disponibilizar livros de domínio público em uma interface interativa para que os usuários possam montar e gerenciar sua estante virtual.
+**| Desafio 2 – Biblioteca Virtual: Leitura Livre**
+- Objetivo: Disponibilizar livros de domínio público em uma interface interativa para que os usuários possam montar e gerenciar sua estante virtual.
 
 Funcionalidades:
   - Página com lista de mínimo 12 livros, exibindo título e autor.
@@ -36,8 +36,8 @@ Diferenciais:
   - Opção de marcar livros como “Lidos”.
   - Modo noturno ou tema customizável para melhor leitura.
 
-| Desafio 3 – Organizador de Tarefas da Sala
-| Objetivo: Criar um organizador digital simples para gerenciar atividades e prazos.
+**| Desafio 3 – Organizador de Tarefas da Sala**
+- Objetivo: Criar um organizador digital simples para gerenciar atividades e prazos.
 
 Funcionalidades:
   - Campo para digitar tarefas com data limite.
