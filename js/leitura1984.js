@@ -18,7 +18,6 @@ window.addEventListener("load", () => {
   }
 });
 
-
 // ------------------------------------------------------------------------
 
 // VAI PARA A PÁGINA DA ESTANTE

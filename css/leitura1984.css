@@ -8,6 +8,8 @@ table {
   height: 100%;
 }
 
+/*CABEÇALHO*/
+
 #superior {
   display: flex;
   align-items: center;
@@ -24,21 +26,21 @@ input::placeholder {
 }
 
 form.d-flex input.form-control {
-  min-width: 300px; /* aumenta o campo */
-  max-width: 400px; /* opcional, para não ficar gigante */
+  min-width: 300px;
+  max-width: 400px;
 }
 
 form.d-flex input.form-control:focus {
-  border-color: #db9b23; /* muda a borda */
-  box-shadow: 0 0 0 0.25rem rgba(219, 155, 35, 0.5); /* contorno amarelo suave */
-  outline: none; /* remove o contorno padrão do navegador */
+  border-color: #db9b23;
+  box-shadow: 0 0 0 0.25rem rgba(219, 155, 35, 0.5);
+  outline: none;
 }
 
 #icon-area {
   margin-right: 10px;
   display: flex;
-  align-items: center; /* alinha verticalmente ao centro */
-  gap: 1rem; /* espaço entre os ícones */
+  align-items: center;
+  gap: 1rem;
 }
 
 #icon-area i {

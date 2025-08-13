@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Biblioteca Lumnia</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="../css/perfil.css" />
-    <link rel="icon" type="image/png" href="../img/Lumnia - logo.png" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <header>
-      <div
-        id="superior"
-        class="d-flex align-items-center justify-content-between"
-      >
-        <div id="logo" class="text-left">
-          <img
-            src="../img/Lumnia - logo.png"
-            alt="Logo Lumnia"
-            class="img-fluid"
-          />
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biblioteca Lumnia</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../css/perfil.css" />
+  <link rel="icon" type="image/png" href="../img/Lumnia - logo.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+</head>
 
-        <div id="icon-area">
-          <i id="estante" class="bi bi-bookmark-heart-fill fs-4"></i>
-          <i id="perfil" class="bi bi-person-fill fs-3"></i>
-          <i id="modo-escuro" class="bi bi-moon-stars-fill fs-4"></i>
-        </div>
+<body>
+  <header>
+    <div id="superior" class="d-flex align-items-center justify-content-between">
+      <div id="logo" class="text-left">
+        <img src="../img/Lumnia - logo.png" alt="Logo Lumnia" class="img-fluid" />
       </div>
-    </header>
-    <hr />
 
-    <main>
-      <div class="info-pag my-3 mx-3 p-3">
-        <h2><strong>Perfil</strong></h2>
+      <div id="icon-area">
+        <i id="estante" class="bi bi-bookmark-heart-fill fs-4"></i>
+        <i id="perfil" class="bi bi-person-fill fs-3"></i>
+        <i id="modo-escuro" class="bi bi-moon-stars-fill fs-4"></i>
       </div>
-    </main>
+    </div>
+  </header>
+  <hr />
 
-    <script src="../js/perfil.js"></script>
-  </body>
+  <main>
+    <div class="info-pag my-3 mx-3 p-3">
+      <h2><strong>Perfil</strong></h2>
+    </div>
+    <div class="p-4">
+      <div class="perfil-info">
+        <p><strong>Usuário:</strong> <span id="perfil-usuario"></span></p>
+        <p><strong>E-mail:</strong> <span id="perfil-email"></span></p>
+        <p><strong>CPF:</strong> <span id="perfil-cpf"></span></p>
+        <p><strong>Senha:</strong> <span id="perfil-senha"></span></p>
+      </div>
+      <button id="voltar" class="btn btn-outline-warning mt-3">Voltar</button>
+      <button id="sair" class="btn btn-outline-danger mt-3">Sair</button>
+    </div>
+  </main>
+
+
+
+  <script src="../js/perfil.js"></script>
+</body>
+
 </html>

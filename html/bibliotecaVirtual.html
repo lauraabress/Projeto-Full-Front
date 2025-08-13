@@ -1,602 +1,414 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Biblioteca Lumnia</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="../css/bibliotecaVirtual.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="image/png" href="../img/Lumnia - logo.png" />
-  </head>
 
-  <body>
-    <header>
-      <div
-        id="superior"
-        class="d-flex align-items-center justify-content-between"
-      >
-        <div id="logo" class="text-left">
-          <img
-            src="../img/Lumnia - logo.png"
-            alt="Logo Lumnia"
-            class="img-fluid"
-          />
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biblioteca Lumnia</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../css/bibliotecaVirtual.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="../img/Lumnia - logo.png" />
+</head>
 
-        <nav id="barra-pesquisa" class="navbar flex-grow-1 mx-3">
-          <div class="container-fluid p-0">
-            <form class="d-flex" role="search" onsubmit="return false;">
-              <div class="input-group">
-                <input
-                  id="input-pesquisa"
-                  type="search"
-                  class="form-control"
-                  placeholder="Pesquise por títulos aqui"
-                  aria-label="Search"
-                />
-                <span class="input-group-text" id="basic-addon2">
-                  <i class="bi bi-search"></i>
-                </span>
-              </div>
-            </form>
-          </div>
-        </nav>
-
-        <div id="icon-area">
-          <i id="estante" class="bi bi-bookmark-heart-fill fs-4"></i>
-          <i id="perfil" class="bi bi-person-fill fs-3"></i>
-          <i id="modo-escuro" class="bi bi-moon-stars-fill fs-4"></i>
-        </div>
+<body>
+  <header>
+    <div id="superior" class="d-flex align-items-center justify-content-between">
+      <div id="logo" class="text-left">
+        <img src="../img/Lumnia - logo.png" alt="Logo Lumnia" class="img-fluid" />
       </div>
 
-      <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a
-                  onclick="mostrarTodos()"
-                  class="nav-link"
-                  aria-current="page"
-                  href="#"
-                  >Todos</a
-                >
-              </li>
-              <li class="nav-item">
-                <a onclick="mostrarRomance()" class="nav-link" href="#"
-                  >Romance</a
-                >
-              </li>
-              <li class="nav-item">
-                <a onclick="mostrarAventura()" class="nav-link" href="#"
-                  >Aventura</a
-                >
-              </li>
-              <li class="nav-item">
-                <a onclick="mostrarDrama()" class="nav-link" href="#">Drama</a>
-              </li>
-              <li class="nav-item">
-                <a onclick="mostrarTerror()" class="nav-link" href="#"
-                  >Terror / Horror</a
-                >
-              </li>
-              <li class="nav-item">
-                <a onclick="mostrarSuspense()" class="nav-link" href="#"
-                  >Suspense / Thriller</a
-                >
-              </li>
-              <li class="nav-item">
-                <a onclick="mostrarFantasia()" class="nav-link" href="#"
-                  >Fantasia</a
-                >
-              </li>
-              <li class="nav-item">
-                <a onclick="mostrarFiccao()" class="nav-link" href="#"
-                  >Ficção Científica</a
-                >
-              </li>
-              <li class="nav-item">
-                <a onclick="mostrarSobrenatural()" class="nav-link" href="#"
-                  >Sobrenatural</a
-                >
-              </li>
-            </ul>
-          </div>
+      <nav id="barra-pesquisa" class="navbar flex-grow-1 mx-3">
+        <div class="container-fluid p-0">
+          <form class="d-flex" role="search" onsubmit="return false;">
+            <div class="input-group">
+              <input id="input-pesquisa" type="search" class="form-control" placeholder="Pesquise por títulos aqui"
+                aria-label="Search" />
+              <span class="input-group-text" id="basic-addon2">
+                <i class="bi bi-search"></i>
+              </span>
+            </div>
+          </form>
         </div>
       </nav>
-    </header>
-    <hr />
 
-    <main>
-      <div class="info-pag my-3 mx-3 p-3">
-        <h2><strong>Lista de Livros</strong></h2>
+      <div id="icon-area">
+        <i id="estante" class="bi bi-bookmark-heart-fill fs-4"></i>
+        <i id="perfil" class="bi bi-person-fill fs-3"></i>
+        <i id="modo-escuro" class="bi bi-moon-stars-fill fs-4"></i>
       </div>
+    </div>
 
-      <div id="container-card" class="container-fluid">
-        <div class="row">
-          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="card bg-white mb-4 ficcao">
-              <img
-                src="https://m.media-amazon.com/images/I/61t0bwt1s3L._UF1000,1000_QL80_.jpg"
-                class="card-img-top"
-                alt="1984"
-              />
-              <div class="card-body">
-                <div>
-                  <h5 class="card-title">1984</h5>
-                  <p class="card-text">George Orwell</p>
-                </div>
-                <a
-                  href="#"
-                  onclick="adicionarEstante(this, event)"
-                  class="btn btn-outline-warning"
-                  >Adicionar Estante</a
-                >
-              </div>
-            </div>
-          </div>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a onclick="mostrarTodos()" class="nav-link" aria-current="page" href="#">Todos</a>
+            </li>
+            <li class="nav-item">
+              <a onclick="mostrarRomance()" class="nav-link" href="#">Romance</a>
+            </li>
+            <li class="nav-item">
+              <a onclick="mostrarAventura()" class="nav-link" href="#">Aventura</a>
+            </li>
+            <li class="nav-item">
+              <a onclick="mostrarDrama()" class="nav-link" href="#">Drama</a>
+            </li>
+            <li class="nav-item">
+              <a onclick="mostrarTerror()" class="nav-link" href="#">Terror / Horror</a>
+            </li>
+            <li class="nav-item">
+              <a onclick="mostrarSuspense()" class="nav-link" href="#">Suspense / Thriller</a>
+            </li>
+            <li class="nav-item">
+              <a onclick="mostrarFantasia()" class="nav-link" href="#">Fantasia</a>
+            </li>
+            <li class="nav-item">
+              <a onclick="mostrarFiccao()" class="nav-link" href="#">Ficção Científica</a>
+            </li>
+            <li class="nav-item">
+              <a onclick="mostrarSobrenatural()" class="nav-link" href="#">Sobrenatural</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <hr />
 
-          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="card bg-white mb-4 romance">
-              <img
-                src="https://m.media-amazon.com/images/I/61Z2bMhGicL.jpg"
-                class="card-img-top"
-                alt="Dom Casmurro"
-              />
-              <div class="card-body">
-                <div>
-                  <h5 class="card-title">Dom Casmurro</h5>
-                  <p class="card-text">Machado de Assis</p>
-                </div>
-                <a
-                  href="#"
-                  onclick="adicionarEstante(this, event)"
-                  class="btn btn-outline-warning"
-                  >Adicionar Estante</a
-                >
-              </div>
-            </div>
-          </div>
+  <main>
+    <div class="info-pag my-3 mx-3 p-3">
+      <h2><strong>Lista de Livros</strong></h2>
+    </div>
 
-          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="card bg-white mb-4 fantasia">
-              <img
-                src="https://m.media-amazon.com/images/I/81TmOZIXvzL.jpg"
-                class="card-img-top"
-                alt="O Pequeno Príncipe"
-              />
-              <div class="card-body">
-                <div>
-                  <h5 class="card-title">O Pequeno Príncipe</h5>
-                  <p class="card-text">Antoine de Saint-Exupéry</p>
-                </div>
-                <a
-                  href="#"
-                  onclick="adicionarEstante(this, event)"
-                  class="btn btn-outline-warning"
-                  >Adicionar Estante</a
-                >
+    <div id="container-card" class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+          <div class="card bg-white mb-4 ficcao">
+            <img src="https://m.media-amazon.com/images/I/61t0bwt1s3L._UF1000,1000_QL80_.jpg" class="card-img-top"
+              alt="1984" />
+            <div class="card-body">
+              <div>
+                <h5 class="card-title">1984</h5>
+                <p class="card-text">George Orwell</p>
               </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="card bg-white mb-4 romance">
-              <img
-                src="https://m.media-amazon.com/images/I/719esIW3D7L.jpg"
-                class="card-img-top"
-                alt="Orgulho e Preconceito"
-              />
-              <div class="card-body">
-                <div>
-                  <h5 class="card-title">Orgulho e Preconceito</h5>
-                  <p class="card-text">Jane Austen</p>
-                </div>
-                <a
-                  href="#"
-                  onclick="adicionarEstante(this, event)"
-                  class="btn btn-outline-warning"
-                  >Adicionar Estante</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="card bg-white mb-4 fantasia">
-              <img
-                src="https://m.media-amazon.com/images/I/817esPahlrL.jpg"
-                class="card-img-top"
-                alt="Cem Anos de Solidão"
-              />
-              <div class="card-body">
-                <div>
-                  <h5 class="card-title">Cem Anos de Solidão</h5>
-                  <p class="card-text">Gabriel García Márquez</p>
-                </div>
-                <a
-                  href="#"
-                  onclick="adicionarEstante(this, event)"
-                  class="btn btn-outline-warning"
-                  >Adicionar Estante</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="card bg-white mb-4 fantasia">
-              <img
-                src="https://m.media-amazon.com/images/I/91M9xPIf10L.jpg"
-                class="card-img-top"
-                alt="O Hobbit"
-              />
-              <div class="card-body">
-                <div>
-                  <h5 class="card-title">O Hobbit</h5>
-                  <p class="card-text">J.R.R. Tolkien</p>
-                </div>
-                <a
-                  href="#"
-                  onclick="adicionarEstante(this, event)"
-                  class="btn btn-outline-warning"
-                  >Adicionar Estante</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="card bg-white mb-4 sobrenatural">
-              <img
-                src="https://m.media-amazon.com/images/I/8115Gj1cb6L._UF894,1000_QL80_.jpg"
-                class="card-img-top"
-                alt="A Metamorfose"
-              />
-              <div class="card-body">
-                <div>
-                  <h5 class="card-title">A Metamorfose</h5>
-                  <p class="card-text">Franz Kafka</p>
-                </div>
-                <a
-                  href="#"
-                  onclick="adicionarEstante(this, event)"
-                  class="btn btn-outline-warning"
-                  >Adicionar Estante</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="card bg-white mb-4 drama">
-              <img
-                src="https://m.media-amazon.com/images/I/91WKPd60P4L.jpg"
-                class="card-img-top"
-                alt="O Sol é para Todos"
-              />
-              <div class="card-body">
-                <div>
-                  <h5 class="card-title">O Sol é para Todos</h5>
-                  <p class="card-text">Harper Lee</p>
-                </div>
-                <a
-                  href="#"
-                  onclick="adicionarEstante(this, event)"
-                  class="btn btn-outline-warning"
-                  >Adicionar Estante</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="card bg-white mb-4 suspense"">
-              <img
-                src="https://m.media-amazon.com/images/I/916WkSH4cGL.jpg"
-                class="card-img-top"
-                alt="Crime e Castigo"
-              />
-              <div class="card-body">
-                <div>
-                  <h5 class="card-title">Crime e Castigo</h5>
-                  <p class="card-text">Fiódor Dostoiévski</p>
-                </div>
-                <a
-                  href="#"
-                  onclick="adicionarEstante(this, event)"
-                  class="btn btn-outline-warning"
-                  >Adicionar Estante</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="card bg-white mb-4 romance">
-              <img
-                src="https://m.media-amazon.com/images/I/81slUinjTlS.jpg"
-                class="card-img-top"
-                alt="O Alquimista"
-              />
-              <div class="card-body">
-                <div>
-                  <h5 class="card-title">O Alquimista</h5>
-                  <p class="card-text">Paulo Coelho</p>
-                </div>
-                <a
-                  href="#"
-                  onclick="adicionarEstante(this, event)"
-                  class="btn btn-outline-warning"
-                  >Adicionar Estante</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="card bg-white mb-4 romance">
-              <img
-                src="https://m.media-amazon.com/images/I/91Jm5zoM0EL.jpg"
-                class="card-img-top"
-                alt="Jane Eyre"
-              />
-              <div class="card-body">
-                <div>
-                  <h5 class="card-title">Jane Eyre</h5>
-                  <p class="card-text">Charlotte Brontë</p>
-                </div>
-                <a
-                  href="#"
-                  onclick="adicionarEstante(this, event)"
-                  class="btn btn-outline-warning"
-                  >Adicionar Estante</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="card bg-white mb-4 drama">
-              <img
-                src="https://m.media-amazon.com/images/I/91BsZhxCRjL.jpg"
-                class="card-img-top"
-                alt="A Revolução dos Bichos"
-              />
-              <div class="card-body">
-                <div>
-                  <h5 class="card-title">A Revolução dos Bichos</h5>
-                  <p class="card-text">George Orwell</p>
-                </div>
-                <a
-                  href="#"
-                  onclick="adicionarEstante(this, event)"
-                  class="btn btn-outline-warning"
-                  >Adicionar Estante</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="card bg-white mb-4 ficcao">
-              <img
-                src="https://images-na.ssl-images-amazon.com/images/I/71OFqSRFDgL.jpg"
-                class="card-img-top"
-                alt="Fahrenheit 451"
-              />
-              <div class="card-body">
-                <div>
-                  <h5 class="card-title">Fahrenheit 451</h5>
-                  <p class="card-text">Ray Bradbury</p>
-                </div>
-                <a
-                  href="#"
-                  onclick="adicionarEstante(this, event)"
-                  class="btn btn-outline-warning"
-                  >Adicionar Estante</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="card bg-white mb-4 sobrenatural">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkrr8oqqhbhjAWaRKyELw1zAhlCIi6iZ-vLw&s"
-                class="card-img-top"
-                alt="O Exorcista"
-              />
-              <div class="card-body">
-                <div>
-                  <h5 class="card-title">O Exorcista</h5>
-                  <p class="card-text">William Peter Blatty</p>
-                </div>
-                <a
-                  href="#"
-                  onclick="adicionarEstante(this, event)"
-                  class="btn btn-outline-warning"
-                  >Adicionar Estante</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="card bg-white mb-4 suspense">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvn_etn7rqDp2pOzLLs_K1kQD0aRhEPeqIWQ&s"
-                class="card-img-top"
-                alt="O Silêncio dos Inocentes"
-              />
-              <div class="card-body">
-                <div>
-                  <h5 class="card-title">O Silêncio dos Inocentes</h5>
-                  <p class="card-text">Thomas Harris</p>
-                </div>
-                <a
-                  href="#"
-                  onclick="adicionarEstante(this, event)"
-                  class="btn btn-outline-warning"
-                  >Adicionar Estante</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="card bg-white mb-4 acao">
-              <img
-                src="https://m.media-amazon.com/images/I/71WOkspHbOL._UF894,1000_QL80_.jpg"
-                class="card-img-top"
-                alt="Jogos Vorazes"
-              />
-              <div class="card-body">
-                <div>
-                  <h5 class="card-title">Jogos Vorazes</h5>
-                  <p class="card-text">Suzanne Collins</p>
-                </div>
-                <a
-                  href="#"
-                  onclick="adicionarEstante(this, event)"
-                  class="btn btn-outline-warning"
-                  >Adicionar Estante</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="card bg-white mb-4 acao">
-              <img
-                src="https://m.media-amazon.com/images/I/81rSPlvS0hL.jpg"
-                class="card-img-top"
-                alt="Divergente"
-              />
-              <div class="card-body">
-                <div>
-                  <h5 class="card-title">Divergente</h5>
-                  <p class="card-text">Veronica Roth</p>
-                </div>
-                <a
-                  href="#"
-                  onclick="adicionarEstante(this, event)"
-                  class="btn btn-outline-warning"
-                  >Adicionar Estante</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="card bg-white mb-4 terror">
-              <img
-                src="https://cartolaeditora.com.br/wp-content/uploads/2023/08/capa-os-hospedes-de-dracula.jpg"
-                class="card-img-top"
-                alt="Drácula"
-              />
-              <div class="card-body">
-                <div>
-                  <h5 class="card-title">Drácula</h5>
-                  <p class="card-text">Bram Stoker</p>
-                </div>
-                <a
-                  href="#"
-                  onclick="adicionarEstante(this, event)"
-                  class="btn btn-outline-warning"
-                  >Adicionar Estante</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="card bg-white mb-4 terror">
-              <img
-                src="https://m.media-amazon.com/images/I/91g9Dvtf+jL.jpg"
-                class="card-img-top"
-                alt="It: A Coisa"
-              />
-              <div class="card-body">
-                <div>
-                  <h5 class="card-title">It: A Coisa</h5>
-                  <p class="card-text">Stephen King</p>
-                </div>
-                <a
-                  href="#"
-                  onclick="adicionarEstante(this, event)"
-                  class="btn btn-outline-warning"
-                  >Adicionar Estante</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="card bg-white mb-4 aventura">
-              <img
-                src="https://www.lpm.com.br/livros/Imagens/a_ilha_do_tesouro_9788525424549_g.jpg"
-                class="card-img-top"
-                alt="A Ilha do Tesouro"
-              />
-              <div class="card-body">
-                <div>
-                  <h5 class="card-title">A Ilha do Tesouro</h5>
-                  <p class="card-text">Robert Louis Stevenson</p>
-                </div>
-                <a
-                  href="#"
-                  onclick="adicionarEstante(this, event)"
-                  class="btn btn-outline-warning"
-                  >Adicionar Estante</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <div class="card bg-white mb-4 aventura">
-              <img
-                src="https://m.media-amazon.com/images/I/81mWTlcwsaL.jpg"
-                class="card-img-top"
-                alt="As Aventuras de Tom Sawyer"
-              />
-              <div class="card-body">
-                <div>
-                  <h5 class="card-title">As Aventuras de Tom Sawyer</h5>
-                  <p class="card-text">Mark Twain</p>
-                </div>
-                <a
-                  href="#"
-                  onclick="adicionarEstante(this, event)"
-                  class="btn btn-outline-warning"
-                  >Adicionar Estante</a
-                >
-              </div>
+              <a href="#" onclick="adicionarEstante(this, event)" class="btn btn-outline-warning"> <i id="estante"
+                  class="bi bi-bookmark-heart-fill"></i>Adicionar Estante
+              </a>
             </div>
           </div>
         </div>
-      </div>
-    </main>
 
-    <footer>
-      <p class="text-black">Biblioteca LUMNIA</p>
-      <div id="redes">
-        <i class="bi bi-whatsapp"></i>
-        <i class="bi bi-tiktok"></i>
-        <i class="bi bi-facebook"></i>
-      </div>
-    </footer>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+          <div class="card bg-white mb-4 romance">
+            <img src="https://m.media-amazon.com/images/I/61Z2bMhGicL.jpg" class="card-img-top" alt="Dom Casmurro" />
+            <div class="card-body">
+              <div>
+                <h5 class="card-title">Dom Casmurro</h5>
+                <p class="card-text">Machado de Assis</p>
+              </div>
+              <a href="#" onclick="adicionarEstante(this, event)" class="btn btn-outline-warning"><i id="estante"
+                  class="bi bi-bookmark-heart-fill"></i>Adicionar Estante</a>
+            </div>
+          </div>
+        </div>
 
-    <script src="../js/bibliotecaVirtual.js"></script>
-  </body>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+          <div class="card bg-white mb-4 fantasia">
+            <img src="https://m.media-amazon.com/images/I/81TmOZIXvzL.jpg" class="card-img-top"
+              alt="O Pequeno Príncipe" />
+            <div class="card-body">
+              <div>
+                <h5 class="card-title">O Pequeno Príncipe</h5>
+                <p class="card-text">Antoine de Saint-Exupéry</p>
+              </div>
+              <a href="#" onclick="adicionarEstante(this, event)" class="btn btn-outline-warning"><i id="estante"
+                  class="bi bi-bookmark-heart-fill"></i>Adicionar Estante</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+          <div class="card bg-white mb-4 romance">
+            <img src="https://m.media-amazon.com/images/I/719esIW3D7L.jpg" class="card-img-top"
+              alt="Orgulho e Preconceito" />
+            <div class="card-body">
+              <div>
+                <h5 class="card-title">Orgulho e Preconceito</h5>
+                <p class="card-text">Jane Austen</p>
+              </div>
+              <a href="#" onclick="adicionarEstante(this, event)" class="btn btn-outline-warning"><i id="estante"
+                  class="bi bi-bookmark-heart-fill"></i>Adicionar Estante</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+          <div class="card bg-white mb-4 fantasia">
+            <img src="https://m.media-amazon.com/images/I/817esPahlrL.jpg" class="card-img-top"
+              alt="Cem Anos de Solidão" />
+            <div class="card-body">
+              <div>
+                <h5 class="card-title">Cem Anos de Solidão</h5>
+                <p class="card-text">Gabriel García Márquez</p>
+              </div>
+              <a href="#" onclick="adicionarEstante(this, event)" class="btn btn-outline-warning"><i id="estante"
+                  class="bi bi-bookmark-heart-fill"></i>Adicionar Estante</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+          <div class="card bg-white mb-4 fantasia">
+            <img src="https://m.media-amazon.com/images/I/91M9xPIf10L.jpg" class="card-img-top" alt="O Hobbit" />
+            <div class="card-body">
+              <div>
+                <h5 class="card-title">O Hobbit</h5>
+                <p class="card-text">J.R.R. Tolkien</p>
+              </div>
+              <a href="#" onclick="adicionarEstante(this, event)" class="btn btn-outline-warning"><i id="estante"
+                  class="bi bi-bookmark-heart-fill"></i>Adicionar Estante</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+          <div class="card bg-white mb-4 sobrenatural">
+            <img src="https://m.media-amazon.com/images/I/8115Gj1cb6L._UF894,1000_QL80_.jpg" class="card-img-top"
+              alt="A Metamorfose" />
+            <div class="card-body">
+              <div>
+                <h5 class="card-title">A Metamorfose</h5>
+                <p class="card-text">Franz Kafka</p>
+              </div>
+              <a href="#" onclick="adicionarEstante(this, event)" class="btn btn-outline-warning"><i id="estante"
+                  class="bi bi-bookmark-heart-fill"></i>Adicionar Estante</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+          <div class="card bg-white mb-4 drama">
+            <img src="https://m.media-amazon.com/images/I/91WKPd60P4L.jpg" class="card-img-top"
+              alt="O Sol é para Todos" />
+            <div class="card-body">
+              <div>
+                <h5 class="card-title">O Sol é para Todos</h5>
+                <p class="card-text">Harper Lee</p>
+              </div>
+              <a href="#" onclick="adicionarEstante(this, event)" class="btn btn-outline-warning"><i id="estante"
+                  class="bi bi-bookmark-heart-fill"></i>Adicionar Estante</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+          <div class="card bg-white mb-4 suspense"">
+              <img
+                src=" https://m.media-amazon.com/images/I/916WkSH4cGL.jpg" class="card-img-top"
+            alt="Crime e Castigo" />
+          <div class="card-body">
+            <div>
+              <h5 class="card-title">Crime e Castigo</h5>
+              <p class="card-text">Fiódor Dostoiévski</p>
+            </div>
+            <a href="#" onclick="adicionarEstante(this, event)" class="btn btn-outline-warning"><i id="estante"
+                class="bi bi-bookmark-heart-fill"></i>Adicionar Estante</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+        <div class="card bg-white mb-4 romance">
+          <img src="https://m.media-amazon.com/images/I/81slUinjTlS.jpg" class="card-img-top" alt="O Alquimista" />
+          <div class="card-body">
+            <div>
+              <h5 class="card-title">O Alquimista</h5>
+              <p class="card-text">Paulo Coelho</p>
+            </div>
+            <a href="#" onclick="adicionarEstante(this, event)" class="btn btn-outline-warning"><i id="estante"
+                class="bi bi-bookmark-heart-fill"></i>Adicionar Estante</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+        <div class="card bg-white mb-4 romance">
+          <img src="https://m.media-amazon.com/images/I/91Jm5zoM0EL.jpg" class="card-img-top" alt="Jane Eyre" />
+          <div class="card-body">
+            <div>
+              <h5 class="card-title">Jane Eyre</h5>
+              <p class="card-text">Charlotte Brontë</p>
+            </div>
+            <a href="#" onclick="adicionarEstante(this, event)" class="btn btn-outline-warning"><i id="estante"
+                class="bi bi-bookmark-heart-fill"></i>Adicionar Estante</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+        <div class="card bg-white mb-4 drama">
+          <img src="https://m.media-amazon.com/images/I/91BsZhxCRjL.jpg" class="card-img-top"
+            alt="A Revolução dos Bichos" />
+          <div class="card-body">
+            <div>
+              <h5 class="card-title">A Revolução dos Bichos</h5>
+              <p class="card-text">George Orwell</p>
+            </div>
+            <a href="#" onclick="adicionarEstante(this, event)" class="btn btn-outline-warning"><i id="estante"
+                class="bi bi-bookmark-heart-fill"></i>Adicionar Estante</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+        <div class="card bg-white mb-4 ficcao">
+          <img src="https://images-na.ssl-images-amazon.com/images/I/71OFqSRFDgL.jpg" class="card-img-top"
+            alt="Fahrenheit 451" />
+          <div class="card-body">
+            <div>
+              <h5 class="card-title">Fahrenheit 451</h5>
+              <p class="card-text">Ray Bradbury</p>
+            </div>
+            <a href="#" onclick="adicionarEstante(this, event)" class="btn btn-outline-warning"><i id="estante"
+                class="bi bi-bookmark-heart-fill"></i>Adicionar Estante</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+        <div class="card bg-white mb-4 sobrenatural">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkrr8oqqhbhjAWaRKyELw1zAhlCIi6iZ-vLw&s"
+            class="card-img-top" alt="O Exorcista" />
+          <div class="card-body">
+            <div>
+              <h5 class="card-title">O Exorcista</h5>
+              <p class="card-text">William Peter Blatty</p>
+            </div>
+            <a href="#" onclick="adicionarEstante(this, event)" class="btn btn-outline-warning"><i id="estante"
+                class="bi bi-bookmark-heart-fill"></i>Adicionar Estante</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+        <div class="card bg-white mb-4 suspense">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvn_etn7rqDp2pOzLLs_K1kQD0aRhEPeqIWQ&s"
+            class="card-img-top" alt="O Silêncio dos Inocentes" />
+          <div class="card-body">
+            <div>
+              <h5 class="card-title">O Silêncio dos Inocentes</h5>
+              <p class="card-text">Thomas Harris</p>
+            </div>
+            <a href="#" onclick="adicionarEstante(this, event)" class="btn btn-outline-warning"><i id="estante"
+                class="bi bi-bookmark-heart-fill"></i>Adicionar Estante</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+        <div class="card bg-white mb-4 acao">
+          <img src="https://m.media-amazon.com/images/I/71WOkspHbOL._UF894,1000_QL80_.jpg" class="card-img-top"
+            alt="Jogos Vorazes" />
+          <div class="card-body">
+            <div>
+              <h5 class="card-title">Jogos Vorazes</h5>
+              <p class="card-text">Suzanne Collins</p>
+            </div>
+            <a href="#" onclick="adicionarEstante(this, event)" class="btn btn-outline-warning"><i id="estante"
+                class="bi bi-bookmark-heart-fill"></i>Adicionar Estante</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+        <div class="card bg-white mb-4 acao">
+          <img src="https://m.media-amazon.com/images/I/81rSPlvS0hL.jpg" class="card-img-top" alt="Divergente" />
+          <div class="card-body">
+            <div>
+              <h5 class="card-title">Divergente</h5>
+              <p class="card-text">Veronica Roth</p>
+            </div>
+            <a href="#" onclick="adicionarEstante(this, event)" class="btn btn-outline-warning"><i id="estante"
+                class="bi bi-bookmark-heart-fill"></i>Adicionar Estante</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+        <div class="card bg-white mb-4 terror">
+          <img src="https://cartolaeditora.com.br/wp-content/uploads/2023/08/capa-os-hospedes-de-dracula.jpg"
+            class="card-img-top" alt="Drácula" />
+          <div class="card-body">
+            <div>
+              <h5 class="card-title">Drácula</h5>
+              <p class="card-text">Bram Stoker</p>
+            </div>
+            <a href="#" onclick="adicionarEstante(this, event)" class="btn btn-outline-warning"><i id="estante"
+                class="bi bi-bookmark-heart-fill"></i>Adicionar Estante</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+        <div class="card bg-white mb-4 terror">
+          <img src="https://m.media-amazon.com/images/I/91g9Dvtf+jL.jpg" class="card-img-top" alt="It: A Coisa" />
+          <div class="card-body">
+            <div>
+              <h5 class="card-title">It: A Coisa</h5>
+              <p class="card-text">Stephen King</p>
+            </div>
+            <a href="#" onclick="adicionarEstante(this, event)" class="btn btn-outline-warning"><i id="estante"
+                class="bi bi-bookmark-heart-fill"></i>Adicionar Estante</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+        <div class="card bg-white mb-4 aventura">
+          <img src="https://www.lpm.com.br/livros/Imagens/a_ilha_do_tesouro_9788525424549_g.jpg" class="card-img-top"
+            alt="A Ilha do Tesouro" />
+          <div class="card-body">
+            <div>
+              <h5 class="card-title">A Ilha do Tesouro</h5>
+              <p class="card-text">Robert Louis Stevenson</p>
+            </div>
+            <a href="#" onclick="adicionarEstante(this, event)" class="btn btn-outline-warning"><i id="estante"
+                class="bi bi-bookmark-heart-fill"></i>Adicionar Estante</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+        <div class="card bg-white mb-4 aventura">
+          <img src="https://m.media-amazon.com/images/I/81mWTlcwsaL.jpg" class="card-img-top"
+            alt="As Aventuras de Tom Sawyer" />
+          <div class="card-body">
+            <div>
+              <h5 class="card-title">As Aventuras de Tom Sawyer</h5>
+              <p class="card-text">Mark Twain</p>
+            </div>
+            <a href="#" onclick="adicionarEstante(this, event)" class="btn btn-outline-warning"><i id="estante"
+                class="bi bi-bookmark-heart-fill"></i>Adicionar Estante</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+
+  <footer>
+    <p class="text-black">Biblioteca LUMNIA</p>
+    <div id="redes">
+      <i class="bi bi-whatsapp"></i>
+      <i class="bi bi-tiktok"></i>
+      <i class="bi bi-facebook"></i>
+    </div>
+  </footer>
+
+  <script src="../js/bibliotecaVirtual.js"></script>
+</body>
+
 </html>

@@ -93,19 +93,6 @@ function adicionarEstante(botao, event) {
   alert(`Livro "${titulo}" adicionado à estante!`);
 }
 
-// Navegação entre páginas (estante, perfil, inicial)
-document.getElementById("estante").addEventListener("click", () => {
-  window.location.href = "estante.html";
-});
-
-document.getElementById("perfil").addEventListener("click", () => {
-  window.location.href = "perfil.html";
-});
-
-document.getElementById("logo").addEventListener("click", () => {
-  window.location.href = "bibliotecaVirtual.html";
-});
-
 // Filtros de categorias
 function mostrarTodos() {
   document.querySelectorAll('.card').forEach(card => card.parentElement.style.display = 'block');

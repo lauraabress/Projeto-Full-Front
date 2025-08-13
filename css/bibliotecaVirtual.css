@@ -2,7 +2,11 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-/*CABEÇALHO*/
+/*MODO ESCURO*/
+/* Placeholder da barra de pesquisa no modo escuro */
+body.bg-dark #input-pesquisa::placeholder {
+  color: #bbb;
+}
 
 /* Barra de pesquisa no modo escuro */
 body.bg-dark #input-pesquisa,
@@ -10,11 +14,6 @@ body.bg-dark .input-group-text {
   background-color: #333;
   color: #eee;
   border: 1px solid #555;
-}
-
-/* Placeholder da barra de pesquisa no modo escuro */
-body.bg-dark #input-pesquisa::placeholder {
-  color: #bbb;
 }
 
 .navbar-dark {
@@ -47,6 +46,8 @@ body.bg-dark #input-pesquisa::placeholder {
   color: #ffffff !important;
 }
 
+/*CABEÇALHO*/
+
 #superior {
   display: flex;
   align-items: center;
@@ -57,7 +58,7 @@ body.bg-dark #input-pesquisa::placeholder {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 400px; /* ou ajuste conforme quiser */
+  width: 400px;
 }
 
 input::placeholder {
@@ -69,14 +70,15 @@ input::placeholder {
   cursor: pointer;
 }
 
+/*Barra de pesquisa*/
 form.d-flex input.form-control {
-  min-width: 300px; /* aumenta o campo */
-  max-width: 400px; /* opcional, para não ficar gigante */
+  min-width: 300px;
+  max-width: 400px; 
 }
 
 form.d-flex input.form-control:focus {
-  border-color: #db9b23; /* muda a borda */
-  box-shadow: 0 0 0 0.25rem rgba(219, 155, 35, 0.5); /* contorno amarelo suave */
+  border-color: #db9b23; 
+  box-shadow: 0 0 0 0.25rem rgba(219, 155, 35, 0.5);
   outline: none; /* remove o contorno padrão do navegador */
 }
 
@@ -137,6 +139,10 @@ hr {
 
 #container-card {
   margin: 10px;
+}
+
+.card i{
+  margin-right: 8px;
 }
 
 /*FOOTER*/

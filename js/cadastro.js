@@ -1,11 +1,22 @@
-// VAI PARA A TELA INICIAL
 document
   .getElementById("loginForm")
   .addEventListener("submit", function (event) {
-    event.preventDefault(); // impede o envio automático
+    event.preventDefault();
 
     if (this.checkValidity()) {
-      // se todos os campos obrigatórios estão preenchidos
+      // Pega os valores do formulário
+      const usuario = document.getElementById("in-usuario").value;
+      const email = document.getElementById("in-email").value;
+      const cpf = document.getElementById("in-cpf").value;
+      const senha = document.getElementById("in-senha").value;
+
+      // Salva no localStorage
+      localStorage.setItem(
+        "usuarioCadastrado",
+        JSON.stringify({ usuario, email, cpf, senha })
+      );
+
+      // Redireciona
       window.location.href = "bibliotecaVirtual.html";
     }
   });
