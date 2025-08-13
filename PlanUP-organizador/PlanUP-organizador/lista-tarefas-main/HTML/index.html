@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizador de tarefas</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header class="text-center py-3 shadow">
+        <h1 class="py-4 text-white"><i class="bi bi-list-check"></i> PlanUP</h1>
+        <p class="text-white opacity-75">Organize seu dia. Alcance seus objetivos.</p>
+    </header>
+
+    <main>
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-9">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="card-title mb-4 text-center"><i class="bi bi-plus-circle me-2"></i>Adicionar
+                                Tarefa</h5>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="taskInput"
+                                    placeholder="Digite uma nova tarefa">
+                                <input type="date" class="form-control" id="taskData">
+                                <button class="btn" id="adicionarTarefa"><i class="bi bi-plus-lg"></i>
+                                    Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card shadow mt-4" id="listaTarefas">
+                        <div class="card-body">
+                            <h5 class="card-title mb-4 text-center" id="titulo"><i
+                                    class="bi bi-clipboard-check me-2"></i>Lista de Tarefas</h5>
+                            <div class="contadores d-flex justify-content-center mb-3">
+                                <div class="contador">
+                                    <div class="badge bg-warning" id="pendentesTexto">Pendentes
+                                        <div class="cards" id="contadorPendentes">0</div>
+                                    </div>
+                                </div>
+                                <div class="contador">
+                                    <div class="badge bg-success" id="concluidasTexto">Concluídas
+                                        <div class="cards" id="contadorConcluidas">0</div>
+                                    </div>
+                                </div>
+                                <div class="contador">
+                                    <div class="badge bg-primary" id="totalTexto">Total
+                                        <div class="cards" id="contadorTotal">0</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="mb-3" id="botoesFiltro">
+                            <div class="btn-group" role="group" aria-label="Filtros de tarefas">
+                                <button type="button" class="btn" id="filtroTodos"><i
+                                        class="bi bi-asterisk me-2"></i>Todos</button>
+                                <button type="button" class="btn" id="filtroPendentes">Pendentes</button>
+                                <button type="button" class="btn" id="filtroConcluidas">Concluídas</button>
+                            </div>
+                        </div>
+
+                        <div class="ordernar">
+                            <label class="form-label me-2" for="ordenarSelect">Ordenar por:</label>
+                            <select class="form-select w-auto py-1" id="ordenarSelect">
+                                <option value="dataCrescente">Data crescente</option>
+                                <option value="dataDecrescente">Data decrescente</option>
+                            </select>
+                        </div>
+                        <div class="list-group">
+                            <ul class="list-group" id="taskList">
+                                <!-- tarefas aqui -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button id="mudarTema" class="btn bg-dark">
+            <i class="bi bi-moon"></i>
+        </button>
+        <a href="../../lista-tarefas-login/login.html" id="logoff" class="bg-dark">
+            <i class="bi bi-box-arrow-right"></i>
+        </a>
+
+    </main>
+
+    <footer>
+        <h5 class="text-center mt-4">&copy; PlanUP</h5>
+    </footer>
+
+    <script src="../SCRIPT/script.js"></script>
+</body>
+
+</html>

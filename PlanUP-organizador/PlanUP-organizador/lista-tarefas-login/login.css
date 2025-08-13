@@ -1,0 +1,152 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #CCC5B9;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #042A2B;
+}
+
+#subtitulo {
+    color: black;
+}
+
+.login-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.login-card {
+    max-width: 400px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background: white;
+    border: none;
+}
+
+.botaoLogin {
+    background: #042A2B;
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    margin: 0;
+}
+
+#botaoEntrar {
+    color: white;
+}
+
+.botaoLogin:hover {
+    background: #054748;
+    color: white;
+}
+
+.form-control {
+    border: 2px solid #e0e0e0;
+    padding: 12px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #042A2B;
+    box-shadow: 0 0 0 0.2rem rgba(4, 42, 43, 0.25);
+}
+
+.textoB {
+    color: #042A2B;
+    font-weight: bold;
+}
+
+.registroLink {
+    color: #042A2B;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.registroLink:hover {
+    color: #054748;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #042A2B;
+    padding: 1rem;
+    color: white;
+    margin-top: auto;
+}
+
+#mudarTema {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 15px 10px;
+    font-size: 0.9rem;
+    border-radius: 50px;
+    color: white;
+    border: none;
+}
+
+#mudarTema:hover {
+    background: #054748;
+}
+
+body.bg-dark {
+    color: white;
+}
+
+body.bg-dark #subtitulo {
+    color: white;
+}
+
+body.bg-dark .login-card {
+    background: rgba(30, 30, 30, 0.95);
+    color: white;
+}
+
+body.bg-dark .form-control {
+    background-color: #333;
+    color: white;
+    border-color: #555;
+}
+
+body.bg-dark .form-control::placeholder {
+    color: #bbb;
+}
+
+body.bg-dark .form-control:focus {
+    border-color: #042A2B;
+    box-shadow: 0 0 0 0.2rem rgba(4, 42, 43, 0.25);
+}
+
+body.bg-dark .textoB {
+    color: white;
+}
+
+body.bg-dark .registroLink {
+    color: white;
+}
+
+body.bg-dark .registroLink:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.login-icon {
+    font-size: 4rem;
+    color: #042A2B;
+    margin-bottom: 1rem;
+}
+
+body.bg-dark .login-icon {
+    color: white;
+}

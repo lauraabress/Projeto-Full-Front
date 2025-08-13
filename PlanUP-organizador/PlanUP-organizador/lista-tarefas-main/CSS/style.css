@@ -1,0 +1,225 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main{
+    flex: 1;
+}
+
+.contadores{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+header{
+    background-color: #042A2B;
+}
+
+#pendentesTexto, #concluidasTexto, #totalTexto{
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 5px;
+}
+
+#contadorTotal, #contadorPendentes, #contadorConcluidas{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.contador .badge .cards {
+    min-width: 110px;
+    min-height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 1rem;
+    box-sizing: border-box;
+}
+
+#adicionarTarefa {
+    background: #042A2B;
+    color: white;
+    font-weight: bold;
+}
+
+.cards {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+}
+
+#botoesFiltro{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+#filtroTodos, #filtroPendentes, #filtroConcluidas{
+    min-width: 120px;
+    font-weight: bold;
+    color: #042A2B;
+    border-color: #042A2B;
+    border-width: 2px;
+}
+
+#filtroTodos:hover, #filtroPendentes:hover, #filtroConcluidas:hover {
+    background: #042A2B;
+    color: white;
+}
+
+.ordernar{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+#pendente{
+    border-left: 5px solid orange !important;
+    background-color: rgb(255, 204, 110) !important;
+}
+
+#concluida{
+    border-left: 5px solid green !important;
+    background-color: rgb(78, 194, 78);
+    animation: taskConcluida 0.5s ease-in-out;
+}
+
+@keyframes taskConcluida {
+    0% {
+        transform: scale(1);
+        background-color: rgb(255, 204, 110);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+        background-color: rgb(78, 194, 78);
+    }
+}
+
+
+footer{
+    background-color: #042A2B;
+    padding: 1rem;
+    color: white;
+    margin-top: 50px;
+}
+
+body.bg-dark {
+    background-color: #121212;
+    color: white;
+}
+
+body.bg-dark .card {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+body.bg-dark .list-group-item {
+    background-color: #2a2a2a;
+}
+
+body.bg-dark .form-control {
+    background-color: #333;
+    color: white;
+    border-color: #555;
+}
+
+body.bg-dark .form-control::placeholder, #taskData {
+    color: #bbb;
+}
+
+body.bg-dark #pendente {
+    color: black;
+}
+
+body.bg-dark #filtroTodos, body.bg-dark #filtroPendentes, body.bg-dark #filtroConcluidas  {
+    color: white;
+}
+
+.form-select#ordenarSelect {
+    border: 1px solid #042A2B; 
+    border-radius: 0.375rem;
+    padding: 10px 15px; 
+    font-size: 1rem;
+    background-color: #fff;
+    color: #333; 
+}
+
+.form-select#ordenarSelect:focus {
+    border-color: #042A2B;
+    outline: none;
+}
+
+.form-select#ordenarSelect option {
+    background-color: #fff;
+    color: #333;
+}
+
+body.bg-dark .form-select#ordenarSelect {
+    background-color: #042A2B;
+    color: #fff;
+    border-color: white; 
+}
+
+body.bg-dark .form-select#ordenarSelect:focus {
+    border-color: white;
+}
+
+body.bg-dark .form-select#ordenarSelect option {
+    background-color: #042A2B;
+    color: #fff;
+}
+
+.ordernar .form-label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+body.bg-dark .ordernar .form-label {
+    color: #fff;
+}
+
+#mudarTema {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 15px 10px;
+    font-size: 0.9rem;
+    border-radius: 50px;
+    color: white;
+}
+
+span {
+    font-size: 1.2rem;
+    font-weight: bold;;
+}
+
+#logoff {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    z-index: 1000;
+    padding: 15px 10px;
+    font-size: 0.9rem;
+    border-radius: 50px;
+    color: white;
+}
