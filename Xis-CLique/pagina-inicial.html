@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xis Clique</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="pagina-inicial.css" />
+  </head>
+  <body>
+    <div id="loginScreen" class="login-screen">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header text-center">
+                <h3><i class="bi bi-burger"></i> Xis Clique</h3>
+              </div>
+              <div class="card-body">
+                <div id="loginForm">
+                  <h4>Entrar</h4>
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">Email</label>
+                      <input
+                        type="email"
+                        id="loginEmail"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Senha</label>
+                      <input
+                        type="password"
+                        id="loginPassword"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                    <button type="submit" class="btn btn-danger w-100 mb-2">
+                      Entrar
+                    </button>
+                  </form>
+                  <p class="text-center">
+                    Não tem conta? <a href="#" id="showRegister">Cadastre-se</a>
+                  </p>
+                </div>
+
+                <div id="registerForm" style="display: none">
+                  <h4>Cadastrar</h4>
+                  <form>
+                    <div class="mb-3">
+                      <label class="form-label">Nome</label>
+                      <input
+                        type="text"
+                        id="registerName"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Email</label>
+                      <input
+                        type="email"
+                        id="registerEmail"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Senha</label>
+                      <input
+                        type="password"
+                        id="registerPassword"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                    <button type="submit" class="btn btn-danger w-100 mb-2">
+                      Cadastrar
+                    </button>
+                  </form>
+                  <p class="text-center">
+                    Já tem conta? <a href="#" id="showLogin">Entre aqui</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="mainApp" style="display: none">
+      <!-- Header -->
+      <nav class="navbar navbar-dark bg-danger">
+        <div class="container-fluid">
+          <span class="navbar-brand"
+            ><i class="bi bi-burger"></i> Xis CLique</span
+          >
+          <div>
+            <span class="text-white me-3"
+              >Olá, <span id="userName"></span>!</span
+            >
+            <button id="logoutBtn" class="btn btn-outline-light btn-sm">
+              Sair
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <div
+        id="bannerCarousel"
+        class="carousel slide mb-4"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner"></div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#bannerCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#bannerCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h2>Cardápio</h2>
+              <div class="input-group w-25">
+                <input
+                  type="text"
+                  id="searchInput"
+                  class="form-control"
+                  placeholder="Buscar..."
+                />
+                <span class="input-group-text"
+                  ><i class="bi bi-search"></i
+                ></span>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <button
+                class="btn btn-outline-danger me-2 filter-btn active"
+                data-category="all"
+              >
+                Todos
+              </button>
+              <button
+                class="btn btn-outline-danger me-2 filter-btn"
+                data-category="burgers"
+              >
+                Hambúrgueres
+              </button>
+              <button
+                class="btn btn-outline-danger me-2 filter-btn"
+                data-category="pizzas"
+              >
+                Pizzas
+              </button>
+              <button
+                class="btn btn-outline-danger me-2 filter-btn"
+                data-category="drinks"
+              >
+                Bebidas
+              </button>
+              <button
+                class="btn btn-outline-danger me-2 filter-btn"
+                data-category="desserts"
+              >
+                Sobremesas
+              </button>
+              <button
+                class="btn btn-outline-danger me-2 filter-btn"
+                data-category="combos"
+              >
+                Combos
+              </button>
+            </div>
+
+            <div id="productGrid" class="row"></div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card sticky-top">
+              <div class="card-header bg-danger text-white">
+                <h5>
+                  <i class="bi bi-cart3"></i> Seu Pedido
+                  <span id="cartCount" class="badge bg-light text-danger"
+                    >0</span
+                  >
+                </h5>
+              </div>
+              <div class="card-body" id="cartBody">
+                <div id="emptyCart" class="text-center text-muted">
+                  <i class="bi bi-cart-x display-4"></i>
+                  <p>Carrinho vazio</p>
+                </div>
+                <div id="cartItems"></div>
+              </div>
+              <div class="card-footer">
+                <div class="d-flex justify-content-between mb-2">
+                  <strong>Total: R$ <span id="cartTotal">0,00</span></strong>
+                </div>
+                <button
+                  id="clearCartBtn"
+                  class="btn btn-outline-danger btn-sm w-100 mb-2"
+                >
+                  Limpar Carrinho
+                </button>
+                <button id="checkoutBtn" class="btn btn-danger w-100">
+                  Finalizar Pedido
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="pagina-inicial.js"></script>
+  </body>
+</html>
